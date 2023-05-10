@@ -23,3 +23,7 @@ class Settings(BaseSettings):
 
     # Database
     MONGODB_URL: str = os.environ.get("MONGODB_URL")
+
+    class Config:
+        """The configuration subclass"""
+        case_sensitive = True
