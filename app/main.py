@@ -4,6 +4,7 @@ from fastapi import FastAPI
 from motor.motor_asyncio import AsyncIOMotorClient
 
 from core.config import settings
+from models.user_model import User
 
 app = FastAPI(
     title=settings.PROJECT_NAME,
@@ -14,7 +15,7 @@ app = FastAPI(
 async def startup():
     """Initialize the database"""
     db_client = AsyncIOMotorClient(f"{settings.MONGODB_URL}todolist")
-    await init_beanie(database=db_client.get_default_database(), document_models=[])
+    await init_beanie(database=db_client.get_default_database(), document_models=[User])
 
 
 @app.get("/", name="Home", tags=["Home"], description="Home endpoint")
