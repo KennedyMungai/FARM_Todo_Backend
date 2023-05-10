@@ -1,5 +1,6 @@
 """The entrypoint for the application"""
 from fastapi import FastAPI
+from core.config import settings
 
 
 app = FastAPI()
