@@ -20,3 +20,6 @@ class Settings(BaseSettings):
     ACCESS_TOKEN_EXPIRATION_MINUTES: int = 15
     REFRESH_TOKEN_EXPIRATION_MINUTES: int = 60 * 24 * 7         # 7 days
     PROJECT_NAME: str = "Todo App"
+
+    # Database
+    MONGODB_URL: str = os.environ.get("MONGODB_URL")
