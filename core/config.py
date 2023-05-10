@@ -3,7 +3,7 @@ import os
 from typing import List
 
 from dotenv import find_dotenv, load_dotenv
-from pydantic import BaseSettings, AnyHttpUrl
+from pydantic import AnyHttpUrl, BaseSettings
 
 load_dotenv(find_dotenv())
 
