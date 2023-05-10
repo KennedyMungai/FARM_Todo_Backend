@@ -54,3 +54,7 @@ class User(Document):
             User | None: The user or None
         """
         return await self.find_one(self.email == email)
+
+    class Collection:
+        """Contains the name of the db"""
+        name = "Users"
