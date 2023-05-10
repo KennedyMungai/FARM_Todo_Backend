@@ -1,5 +1,6 @@
 """The User Model """
 from uuid import UUID, uuid4
+from datetime import datetime
 
 from beanie import Document, Indexed
 from pydantic import EmailStr, Field
@@ -32,3 +33,7 @@ class User(Document):
         if isinstance(other, User):
             return self.email == other.email
         return False
+
+    @property
+    def create(self) -> datetime:
+        return self.id.generation_time
