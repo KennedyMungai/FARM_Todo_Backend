@@ -42,3 +42,15 @@ class User(Document):
             datetime: The time when the user was created
         """
         return self.id.generation_time
+
+    @classmethod
+    async def by_email(self, email: str) -> "User | None":
+        """Finds a user by email
+
+        Args:
+            email (str): The email of the user
+
+        Returns:
+            User | None: The user or None
+        """
+        return await self.find_one(self.email == email)
