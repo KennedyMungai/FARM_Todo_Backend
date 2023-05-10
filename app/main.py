@@ -1,6 +1,7 @@
 """The entrypoint for the application"""
 from fastapi import FastAPI
 from core.config import settings
+from beanie import init_beanie
 
 
 app = FastAPI(
