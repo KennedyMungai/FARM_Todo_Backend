@@ -1,7 +1,8 @@
 """The User Model """
-from beanie import Document, Indexed
 from uuid import UUID, uuid4
-from pydantic import Field, EmailStr
+
+from beanie import Document, Indexed
+from pydantic import EmailStr, Field
 
 
 class User(Document):
