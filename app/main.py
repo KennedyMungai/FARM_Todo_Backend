@@ -3,7 +3,9 @@ from fastapi import FastAPI
 from core.config import settings
 
 
-app = FastAPI()
+app = FastAPI(
+    title=settings.PROJECT_NAME,
+)
 
 
 @app.get("/", name="Home", tags=["Home"], description="Home endpoint")
