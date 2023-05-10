@@ -27,3 +27,6 @@ class Settings(BaseSettings):
     class Config:
         """The configuration subclass"""
         case_sensitive = True
+
+
+settings = Settings()
