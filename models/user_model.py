@@ -36,4 +36,9 @@ class User(Document):
 
     @property
     def create(self) -> datetime:
+        """Returns when a user was created
+
+        Returns:
+            datetime: The time when the user was created
+        """
         return self.id.generation_time
