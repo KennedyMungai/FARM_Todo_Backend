@@ -1,9 +1,9 @@
 """The entrypoint for the application"""
 from beanie import init_beanie
 from fastapi import FastAPI
+from motor.motor_asyncio import AsyncIOMotorClient
 
 from core.config import settings
-from motor.motor_asyncio import AsyncIOMotorClient
 
 app = FastAPI(
     title=settings.PROJECT_NAME,
