@@ -13,8 +13,8 @@ app = FastAPI(
 @app.on_event("startup")
 async def startup():
     """Initialize the database"""
-    client = AsyncIOMotorClient(f"{settings.MONGODB_URL}todolist")
-    await init_beanie(database=client.get_default_database(), document_models=[])
+    db_client = AsyncIOMotorClient(f"{settings.MONGODB_URL}todolist")
+    await init_beanie(database=db_client.get_default_database(), document_models=[])
 
 
 @app.get("/", name="Home", tags=["Home"], description="Home endpoint")
