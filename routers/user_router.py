@@ -3,6 +3,7 @@ from fastapi import APIRouter
 
 from schemas.user_schema import UserAuth
 from services.user_service import UserService
+import pymongo
 
 user_router = APIRouter(prefix="/user", tags=["User"])
 
@@ -37,4 +38,7 @@ async def create_user_router(data: UserAuth):
     Returns:
         User: Returns the newly created user
     """
-    await UserService.create_user(data)
+    try:
+        await UserService.create_user(data)
+    except pymongo.errors.DuplicateKeyError:
+        return {"message": "User already exists"}
