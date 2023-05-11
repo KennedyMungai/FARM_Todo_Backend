@@ -15,4 +15,9 @@ def hash_password(password: str) -> str:
 
 
 def verify_password(plain_password: str, hashed_password: str) -> bool:
+    """Function verifies the password using the passlib library.
+
+    Returns:
+        bool: _description_
+    """
     return password_context.verify(plain_password, hashed_password)
