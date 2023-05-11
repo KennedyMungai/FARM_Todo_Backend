@@ -8,6 +8,7 @@
 		"cSpell.words": [
 			"dotenv",
 			"passlib",
+			"pymongo",
 			"todolist"
 		],
 		"[python]": {
