@@ -29,4 +29,4 @@ async def user_test():
     tags=["Users"]
 )
 async def create_user_router(data: UserAuth):
-    pass
+    UserService.create_user(data)
