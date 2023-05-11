@@ -25,4 +25,5 @@ async def home_endpoint_get() -> dict[str, str]:
     return {"message": "Hello World"}
 
 
+# The users router
 app.include_router(user_router)
