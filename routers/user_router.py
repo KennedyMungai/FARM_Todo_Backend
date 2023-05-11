@@ -1,6 +1,6 @@
 """Created the router file for the user"""
 import pymongo
-from fastapi import APIRouter
+from fastapi import APIRouter, HTTPException, status
 
 from schemas.user_schema import UserAuth
 from services.user_service import UserService
@@ -40,5 +40,8 @@ async def create_user_router(data: UserAuth):
     """
     try:
         await UserService.create_user(data)
-    except pymongo.errors.DuplicateKeyError:
-        return {"message": "User already exists"}
+    except pymongo.errors.DuplicateKeyError as error:
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail=f"{error}: Username or email address already in use"
+        )
