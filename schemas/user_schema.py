@@ -26,6 +26,6 @@ class UserOut(BaseModel):
     user_id: UUID
     username: str
     email: EmailStr
-    first_name: str
+    first_name: Optional[str]
     last_name: Optional[str]
     disabled: bool = False
