@@ -27,7 +27,8 @@ async def user_test():
     "/create",
     name="Create User",
     description="An endpoint to create users",
-    tags=["Users"]
+    tags=["Users"],
+    status_code=status.HTTP_201_CREATED
 )
 async def create_user_router(data: UserAuth):
     """The endpoint to create a user
