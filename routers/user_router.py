@@ -26,5 +26,5 @@ async def user_test():
     description="An endpoint to create users",
     tags=["Users"]
 )
-async def create_user_router(data):
+async def create_user_router(data: UserAuth):
     pass
