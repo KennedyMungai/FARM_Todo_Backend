@@ -1,5 +1,6 @@
 """Created the router file for the user"""
 from fastapi import APIRouter
+from schemas.user_schema import UserAuth
 
 user_router = APIRouter(prefix="/user", tags=["User"])
 
