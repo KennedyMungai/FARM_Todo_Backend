@@ -5,7 +5,7 @@ from fastapi import APIRouter, HTTPException, status
 from schemas.user_schema import UserAuth
 from services.user_service import UserService
 
-user_router = APIRouter(prefix="/user", tags=["User"])
+user_router = APIRouter(prefix="/user", tags=["Users"])
 
 
 @user_router.get(
