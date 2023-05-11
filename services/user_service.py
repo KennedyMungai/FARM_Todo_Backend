@@ -9,6 +9,14 @@ class UserService:
     """
     @staticmethod
     async def create_user(user: UserAuth):
+        """The async function that creates the user for the application
+
+        Args:
+            user (UserAuth): The user data
+
+        Returns:
+            User: The newly created user
+        """
         user_in = User(
             username=user.username,
             email=user.email,
