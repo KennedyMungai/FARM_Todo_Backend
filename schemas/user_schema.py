@@ -1,5 +1,6 @@
 """The file with the user schemas"""
 from pydantic import BaseModel, EmailStr, Field
+from uuid import UUID
 
 
 class UserAuth(BaseModel):
@@ -12,3 +13,12 @@ class UserAuth(BaseModel):
     username: str = Field(..., min_length=5, max_length=50,
                           description="The username of the User")
     password: str = Field(..., min_length=5, max_length=24)
+
+
+class UserOut(BaseModel):
+    user_id: UUID
+    username: str
+    email: EmailStr
+    first_name: str
+    last_name: str
+    disabled: bool
