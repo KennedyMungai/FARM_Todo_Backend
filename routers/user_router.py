@@ -5,7 +5,6 @@ from schemas.user_schema import UserAuth
 from services.user_service import UserService
 
 user_router = APIRouter(prefix="/user", tags=["User"])
-user_service = UserService()
 
 
 @user_router.get(
