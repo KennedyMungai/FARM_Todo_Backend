@@ -1,9 +1,9 @@
 """Created the router file for the user"""
+import pymongo
 from fastapi import APIRouter
 
 from schemas.user_schema import UserAuth
 from services.user_service import UserService
-import pymongo
 
 user_router = APIRouter(prefix="/user", tags=["User"])
 
