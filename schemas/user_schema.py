@@ -16,6 +16,11 @@ class UserAuth(BaseModel):
 
 
 class UserOut(BaseModel):
+    """User data template send back ti the front end
+
+    Args:
+        BaseModel (Pydantic): The base library for the UserOut schema
+    """
     user_id: UUID
     username: str
     email: EmailStr
