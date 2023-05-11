@@ -4,6 +4,7 @@ from fastapi import APIRouter, HTTPException, status
 
 from schemas.user_schema import UserAuth
 from services.user_service import UserService
+from schemas.user_schema import UserOut
 
 user_router = APIRouter(prefix="/user", tags=["Users"])
 
@@ -28,7 +29,8 @@ async def user_test():
     name="Create User",
     description="An endpoint to create users",
     tags=["Users"],
-    status_code=status.HTTP_201_CREATED
+    status_code=status.HTTP_201_CREATED,
+    response_model=UserOut
 )
 async def create_user_router(data: UserAuth):
     """The endpoint to create a user
