@@ -29,4 +29,12 @@ async def user_test():
     tags=["Users"]
 )
 async def create_user_router(data: UserAuth):
+    """The endpoint to create a user
+
+    Args:
+        data (UserAuth): The data to create a user
+
+    Returns:
+        User: Returns the newly created user
+    """
     UserService.create_user(data)
