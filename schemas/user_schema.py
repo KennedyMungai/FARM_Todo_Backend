@@ -27,5 +27,5 @@ class UserOut(BaseModel):
     username: str
     email: EmailStr
     first_name: str
-    last_name: str
+    last_name: Optional[str]
     disabled: bool = False
