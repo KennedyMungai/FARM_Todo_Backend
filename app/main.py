@@ -5,11 +5,13 @@ from motor.motor_asyncio import AsyncIOMotorClient
 
 from core.config import settings
 from models.user_model import User
-from routers import user_router
+from routers.user_router import user_router
 
 app = FastAPI(
     title=settings.PROJECT_NAME,
 )
+
+app.include_router(user_router)
 
 
 @app.on_event("startup")
@@ -23,5 +25,3 @@ async def startup():
 async def home_endpoint_get() -> dict[str, str]:
     """Home endpoint"""
     return {"message": "Hello World"}
-
-@app.include_router(user_router)
