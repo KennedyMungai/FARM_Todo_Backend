@@ -37,4 +37,4 @@ async def create_user_router(data: UserAuth):
     Returns:
         User: Returns the newly created user
     """
-    UserService.create_user(data)
+    await UserService.create_user(data)
