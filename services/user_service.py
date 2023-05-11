@@ -1,6 +1,7 @@
 """The script to hold the user services"""
 from schemas.user_schema import UserAuth
 from models.user_model import User
+from core.security import hash_password
 
 
 class UserService:
@@ -9,5 +10,5 @@ class UserService:
         user_in = User(
             username=user.username,
             email=user.email,
-            hashed_password=user.password
+            hashed_password=hash_password(user.password)
         )
