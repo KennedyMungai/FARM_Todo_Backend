@@ -4,6 +4,7 @@ from datetime import datetime
 
 from beanie import Document, Indexed
 from pydantic import EmailStr, Field
+from typing import Optional
 
 
 class User(Document):
@@ -16,9 +17,9 @@ class User(Document):
     username: str = Indexed(str, unique=True)
     email: EmailStr = Indexed(EmailStr, unique=True)
     hashed_password: str
-    first_name: str
-    last_name: str
-    disabled: bool
+    first_name: Optional[str]
+    last_name: Optional[str]
+    disabled: Optional[bool]
 
     def __repr__(self) -> str:
         return f"<User {self.email}>"
