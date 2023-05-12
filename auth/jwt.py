@@ -1,8 +1,8 @@
 """The JWT authentication file"""
-from fastapi import APIRouter, Depends
-from fastapi.security import OAuth2PasswordRequestForm
 from typing import Any
 
+from fastapi import APIRouter, Depends
+from fastapi.security import OAuth2PasswordRequestForm
 
 auth_router = APIRouter(prefix="/login", tags=["auth"])
 
