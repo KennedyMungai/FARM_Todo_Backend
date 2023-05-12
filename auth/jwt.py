@@ -3,6 +3,7 @@ from typing import Any
 
 from fastapi import APIRouter, Depends, HTTPException, status
 from fastapi.security import OAuth2PasswordRequestForm
+from core.security import create_access_token, create_refresh_token
 
 from services.user_service import UserService
 
@@ -22,5 +23,7 @@ async def login(_form_data: OAuth2PasswordRequestForm = Depends()) -> Any:
             detail="Incorrect email or password"
         )
 
-    # TODO :Creating access and refresh tokens
-    return
+    return {
+        "access_token": create_access_token(_user.user_id),
+        "refresh_token": create_refresh_token(_user.user_id)
+    }
