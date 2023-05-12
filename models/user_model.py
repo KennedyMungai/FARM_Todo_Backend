@@ -14,7 +14,7 @@ class User(Document):
         Document (Document): A data type resembling the MongoDB document
     """
     user_id: UUID = Field(default_factory=uuid4)
-    username: str = Indexed(str, unique=True)
+    username: Indexed(str, unique=True)
     email: EmailStr = Indexed(EmailStr, unique=True)
     hashed_password: str
     first_name: Optional[str]
