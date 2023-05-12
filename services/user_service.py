@@ -1,8 +1,9 @@
 """The script to hold the user services"""
 from typing import Optional
-from schemas.user_schema import UserAuth
-from models.user_model import User
+
 from core.security import hash_password
+from models.user_model import User
+from schemas.user_schema import UserAuth
 
 
 class UserService:
