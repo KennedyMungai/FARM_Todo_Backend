@@ -42,5 +42,5 @@ class UserService:
         Returns:
             Optional[User]: The return of the user is optional
         """
-        user = await User.find_one(User.email == email)
-        return user
+        _user = await User.find_one(User.email == email)
+        return _user
