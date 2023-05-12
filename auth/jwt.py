@@ -21,3 +21,6 @@ async def login(_form_data: OAuth2PasswordRequestForm = Depends()) -> Any:
             status_code=status.HTTP_401_UNAUTHORIZED,
             detail="Incorrect email or password"
         )
+
+    # TODO :Creating access and refresh tokens
+    return
