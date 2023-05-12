@@ -1,10 +1,11 @@
 """The file that contains the security for the backend application"""
-from typing import Any, Union
-from passlib.context import CryptContext
 from datetime import datetime, timedelta
-from core.config import settings
-from jose import jwt
+from typing import Any, Union
 
+from jose import jwt
+from passlib.context import CryptContext
+
+from core.config import settings
 
 password_context = CryptContext(schemes=['bcrypt'], deprecated='auto')
 
