@@ -1,7 +1,7 @@
 """The script to hold the user services"""
 from typing import Optional
 
-from core.security import hash_password
+from core.security import hash_password, verify_password
 from models.user_model import User
 from schemas.user_schema import UserAuth
 
@@ -29,8 +29,24 @@ class UserService:
         return user_in
 
     @staticmethod
-    async def authenticate(email: str, password: str) -> Optional[User]:
-        pass
+    async def authenticate(_email: str, _password: str) -> Optional[User]:
+        """A function to authenticate a user who has already signed in
+
+        Args:
+            _email (str): The email of the user
+            _password (str): The password of the user
+
+        Returns:
+            Optional[User]: The user object
+        """
+        _user = UserService.get_user_by_email(_email)
+
+        if not _user:
+            return None
+        if not verify_password(_password, _user.hashed_password):
+            return None
+
+        return _user
 
     @staticmethod
     async def get_user_by_email(email: str) -> Optional[User]:
