@@ -10,8 +10,8 @@ auth_router = APIRouter(prefix="/login", tags=["auth"])
 
 
 @auth_router.post("/")
-async def login(login: OAuth2PasswordRequestForm = Depends()) -> Any:
+async def login(_form_data: OAuth2PasswordRequestForm = Depends()) -> Any:
     """
     Login endpoint
     """
-    pass
+    _user = await UserService.authenticate(email=_form_data.email, password=_form_data.password)
