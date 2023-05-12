@@ -1,4 +1,5 @@
 """The script to hold the user services"""
+from typing import Optional
 from schemas.user_schema import UserAuth
 from models.user_model import User
 from core.security import hash_password
@@ -25,3 +26,7 @@ class UserService:
 
         await user_in.save()
         return user_in
+
+    @staticmethod
+    async def authenticate(email: str, password: str) -> Optional[User]:
+        pass
