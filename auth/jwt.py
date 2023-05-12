@@ -6,7 +6,6 @@ from fastapi.security import OAuth2PasswordRequestForm
 
 from services.user_service import UserService
 
-
 auth_router = APIRouter(prefix="/login", tags=["auth"])
 
 
