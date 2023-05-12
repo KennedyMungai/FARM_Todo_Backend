@@ -3,10 +3,10 @@ from beanie import init_beanie
 from fastapi import FastAPI
 from motor.motor_asyncio import AsyncIOMotorClient
 
+from auth.jwt import auth_router
 from core.config import settings
 from models.user_model import User
 from routers.user_router import user_router
-from auth.jwt import auth_router
 
 app = FastAPI(
     title=settings.PROJECT_NAME,
